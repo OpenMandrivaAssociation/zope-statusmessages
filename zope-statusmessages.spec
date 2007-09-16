@@ -1,31 +1,25 @@
-%define product		statusmessages
-%define realVersion     2.0.1
-%define release         1
+%define product statusmessages
+%define name    zope-%{product}
+%define version 3.0
+%define release %mkrel 1
 
-%define version %(echo %{realVersion} | sed -e 's/-/./g')
-
-%define zope_minver	2.7
-%define plone_minver	2.0
-
-%define zope_home	%{_prefix}/lib/zope
+%define plone_minver	3.0
+%define zope_home	    %{_prefix}/lib/zope
 %define software_home	%{zope_home}/lib/python
 
-Summary:	Provides an easy way of handling internationalized status messages
-Name:		zope-%{product}
+Name:		%{name}
 Version:	%{version}
-Release:	%mkrel %{release}
+Release:	%{release}
+Summary:	Provides an easy way of handling internationalized status messages
 License:	GPL
 Group:		System/Servers
-Source:		http://plone.org/products/statusmessages/releases/%{version}/statusmessages-%{version}.tar.bz2
-URL:		http://plone.org/products/statusmessages/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:	noarch
-Requires:	zope >= %{zope_minver}
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{product}-%{version}.tar.gz
 Requires:	plone >= %{plone_minver}
-
 Provides:	plone-Faq == %{version}
 Obsoletes:	zope-Faq
-
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 It is quite common to write status messages which should be shown to the user
@@ -48,7 +42,6 @@ messages.
 %build
 # Not much, eh? :-)
 
-
 %install
 %{__rm} -rf %{buildroot}
 %{__mkdir_p} %{buildroot}/%{software_home}/Products
@@ -69,7 +62,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(0644, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-
