@@ -1,7 +1,7 @@
 %define product statusmessages
 %define name    zope-%{product}
 %define version 3.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define plone_minver	3.0
 %define zope_home	    %{_prefix}/lib/zope
@@ -15,7 +15,7 @@ License:	GPL
 Group:		System/Servers
 URL:        http://plone.org/products/%{product}
 Source:     http://plone.org/products/%{product}/releases/%{version}/%{product}-%{version}.tar.gz
-Requires:	plone >= %{plone_minver}
+Requires:	zope-Plone >= %{plone_minver}
 Provides:	plone-Faq == %{version}
 Obsoletes:	zope-Faq
 BuildArch:	noarch
