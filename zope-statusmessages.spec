@@ -19,7 +19,6 @@ Requires:	zope-Plone >= %{plone_minver}
 Provides:	plone-Faq == %{version}
 Obsoletes:	zope-Faq
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 It is quite common to write status messages which should be shown to the user
