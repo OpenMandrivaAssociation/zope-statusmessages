@@ -31,8 +31,8 @@ additional mapping dict and a distinct id.
 The usual way to provide status messages in CMF/Plone has been to add a
 "?portal_status_messages=some%20text" to the URL. While this has some usability
 problems it also isn't possible to i18n-ize these in the common way, as the URL
-is currently limited to the ASCII charset, but an encoding providing support for
-the full unicode range is required.
+is currently limited to the ASCII charset, but an encoding providing support
+for the full unicode range is required.
 The solution provided by this tool is to use session cookies to store the
 messages.
 
