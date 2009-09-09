@@ -1,7 +1,7 @@
 %define product statusmessages
 %define name    zope-%{product}
 %define version 3.0.3
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define plone_minver	3.0
 %define zope_home	    %{_prefix}/lib/zope
