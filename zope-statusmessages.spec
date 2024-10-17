@@ -13,7 +13,7 @@ Release:	%{release}
 Summary:	Provides an easy way of handling internationalized status messages
 License:	GPL
 Group:		System/Servers
-URL:		http://plone.org/products/%{product}
+URL:		https://plone.org/products/%{product}
 Source:		http://plone.org/products/%{product}/releases/%{version}/%{product}-%{version}-tar.gz
 Requires:	zope-Plone >= %{plone_minver}
 Provides:	plone-Faq == %{version}
